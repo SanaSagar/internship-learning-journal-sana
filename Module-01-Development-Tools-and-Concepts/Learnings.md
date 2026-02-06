@@ -15,3 +15,13 @@
 - Understood the need for environment setup
 - Gained clarity on the role of tools in the internship workflow
 - Improved familiarity with the development ecosystem
+
+---
+
+## Week 1 – Day 3
+
+### Key Learnings
+- I learned how to install packages using the terminal
+- Understood the role of environment variables
+- Practiced using basic Linux commands
+- I now feel more confident navigating the terminal
