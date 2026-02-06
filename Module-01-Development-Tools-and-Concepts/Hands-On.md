@@ -15,3 +15,13 @@
 - Started reviewing installation and setup instructions for tools
 - Observed how tools integrate into the development and documentation workflow
 - Practiced navigating files and folders for future updates
+
+---
+
+## Week 1 – Day 3
+
+### Hands-On Activities
+- Installed Linux packages as shown in the video
+- Ran basic terminal commands
+- Verified tool configurations
+- Practiced navigating folders in terminal
