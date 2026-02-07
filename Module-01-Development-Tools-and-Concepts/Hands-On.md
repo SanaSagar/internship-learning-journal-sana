@@ -1,27 +1,38 @@
 # Hands-On
 
 ## Week 1 – Day 1
-### Hands-On Activities
-- Explored the internship learning journal sample repository
-- Reviewed the module and chapter-wise folder structure
-- Understood where and how to document notes
-- Practiced basic GitHub navigation and file structure understanding
-
----
+- Explored the course portals and understood their purpose
+- Reviewed the assignment submission and grading workflow
+- Examined the sample GitHub learning journal repository
+- Understood the module-wise and chapter-wise folder structure
+- Followed the initial steps for setting up Windows Subsystem for Linux (WSL)
+- Verified system compatibility for running a Linux environment
 
 ## Week 1 – Day 2
-### Hands-On Activities
-- Explored different development tools mentioned in the session
-- Started reviewing installation and setup instructions for tools
-- Observed how tools integrate into the development and documentation workflow
-- Practiced navigating files and folders for future updates
-
----
+- Installed Windows Subsystem for Linux (WSL) on Windows
+- Installed Ubuntu distribution inside WSL
+- Navigated the Linux file system using basic terminal commands
+- Compared Linux and Windows directory structures
+- Practiced basic Git commands introduced during the session
+- Understood the basic Git and GitHub workflow through examples
 
 ## Week 1 – Day 3
+- Navigated the Ubuntu file system using absolute and relative paths
+- Practiced common Linux commands for file and directory management
+- Used the WSL terminal inside VS Code
+- Installed the UV tool for project and dependency management
+- Installed the LLM tool using UV
+- Configured API keys for Gemini and OpenAI services
+- Tested basic LLM commands using GPT and Gemini models from the terminal
 
-### Hands-On Activities
-- Installed Linux packages as shown in the video
-- Ran basic terminal commands
-- Verified tool configurations
-- Practiced navigating folders in terminal
+## Week 1 – Day 4
+- Installed and configured Visual Studio Code for development
+- Installed and verified Git on the system
+- Installed Homebrew package manager (for macOS/Linux environments)
+- Added Homebrew to the system PATH
+- Set up Python version management using pyenv
+- Managed project-specific Python versions
+- Installed GitHub CLI and authenticated with GitHub
+- Created a GitHub repository directly from the terminal
+- Installed and tested LLM command-line tools
+- Ran a demo task using LLM CLI for practical understanding
