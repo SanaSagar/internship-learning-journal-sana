@@ -43,3 +43,12 @@
 - Understood why Linux/WSL is commonly used for development environments
 - Got introduced to GitHub Copilot and how it can speed up coding
 
+## Week 2 – Day 1
+- Understood how containerization helps isolate applications and manage dependencies
+- Learned how Podman can be used as a container runtime within WSL
+- Gained hands-on experience running real applications inside containers
+- Learned how port binding and volume mounting enable usability and persistence
+- Understood how multiple containers communicate using container networking
+- Learned how local LLMs can be deployed and accessed securely using containers
+- Gained insight into building simple web applications backed by containerized services
+- Learned practical troubleshooting techniques for container and WSL networking issues
