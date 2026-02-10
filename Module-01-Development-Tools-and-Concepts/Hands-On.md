@@ -48,3 +48,17 @@
 - Pushed changes to GitHub and resolved permission issues
 - Observed how GitHub Copilot can assist during development
 
+## Week 2 – Day 1
+
+### Hands-On Activities
+- Installed Podman inside the WSL environment
+- Pulled a Jupyter Lab container image
+- Ran and managed containers using Podman commands
+- Exposed container ports to access Jupyter Lab from the browser
+- Mounted local directories as volumes to persist data
+- Deployed Ollama inside a container to run a local LLM
+- Interacted with the LLM from within the container
+- Configured Podman networking for container-to-container communication
+- Tested API calls between containers
+- Built and ran a basic Flask application connected to an LLM backend
+- Troubleshot networking issues related to WSL and containers
