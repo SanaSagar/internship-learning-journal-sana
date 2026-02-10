@@ -118,6 +118,25 @@ This session introduced the concept of containerization and demonstrated how con
 - Building a Flask web application backed by an LLM
 - Debugging and resolving WSL networking issues
 
+## Week 2 – Day 2
+
+### Session Summary
+This session continued the deep dive into containerization by focusing on practical, multi-container workflows using Podman. The instructor demonstrated how real applications can be split into separate containers and connected through networking. By containerizing Jupyter Lab and a local LLM (Ollama), the session showed how development, AI inference, and web services can run independently yet communicate seamlessly. The day concluded with building a Flask-based application that consumes LLM responses through internal API calls and addressing common WSL networking challenges.
+
+### Concepts Covered
+- Revisiting containerization principles through real projects
+- Installing and validating Podman in WSL
+- Pulling and running application images
+- Managing container lifecycle (start, stop, inspect)
+- Exposing services using port forwarding
+- Persisting notebooks and data via volume mounts
+- Running Ollama as a containerized local LLM
+- Sending prompts and receiving responses from a containerized LLM
+- Creating Podman networks for inter-container communication
+- Making API calls between services running in different containers
+- Building a Flask application with an LLM backend
+- Diagnosing and resolving WSL networking issues
+
 
 
 
