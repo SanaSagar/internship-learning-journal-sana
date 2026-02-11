@@ -138,5 +138,25 @@ This session continued the deep dive into containerization by focusing on practi
 - Diagnosing and resolving WSL networking issues
 
 
+## Week 2 – Day 3
+
+### Session Summary
+This live session focused on understanding container technologies and modern deployment workflows. The discussion began with a comparison between containers and virtual machines, followed by differences between Podman and Docker. The session then shifted toward web deployment, covering GitHub Pages for static site hosting and FastAPI for building APIs. Finally, practical deployment strategies were demonstrated using Vercel and ngrok, along with explanations of environment variables, CORS, and deployment limitations.
+
+### Concepts Covered
+- Containers vs. Virtual Machines
+- Podman vs. Docker comparison
+- Hosting static websites using GitHub Pages
+- Deploying projects via GitHub Pages
+- Introduction to FastAPI framework
+- HTTP methods: GET and POST
+- API testing using FastAPI interactive docs
+- Deploying backend applications with Vercel
+- Understanding Vercel limitations (timeouts, constraints)
+- Using Vercel CLI for deployment
+- Exposing local servers using ngrok
+- Managing secrets with environment variables
+- Understanding CORS and cross-origin requests
+
 
 
