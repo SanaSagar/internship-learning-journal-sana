@@ -62,3 +62,16 @@
 - Learned how backend services communicate through internal APIs
 - Gained practical insight into deploying AI-powered web applications
 - Learned how to troubleshoot common Podman and WSL networking problems
+
+## Week 2 – Day 3
+- Understood the architectural difference between containers and virtual machines
+- Learned practical differences between Podman and Docker
+- Gained experience deploying static sites via GitHub Pages
+- Learned how to build APIs using FastAPI
+- Understood HTTP methods and their real-world use cases
+- Learned how to deploy backend services using Vercel
+- Understood platform limitations like execution timeouts
+- Learned how ngrok helps in local API testing
+- Understood the importance of environment variables for managing secrets
+- Gained clarity on how CORS affects API communication
+
