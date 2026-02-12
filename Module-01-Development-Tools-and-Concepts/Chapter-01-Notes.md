@@ -158,5 +158,26 @@ This live session focused on understanding container technologies and modern dep
 - Managing secrets with environment variables
 - Understanding CORS and cross-origin requests
 
+## Week 2 – Day 4
+
+### Session Summary
+This session focused on understanding the TDS project workflow and building a production-ready FastAPI server. The instructor explained how to structure projects, handle different types of HTTP requests, validate data using Pydantic models, and implement file upload functionality. The session also covered automated testing using curl, managing secret keys securely, containerizing the application with a Dockerfile, and deploying the project to Hugging Face. The session concluded with best practices for live testing and deployment readiness.
+
+### Concepts Covered
+- Overview of TDS project workflow and submission expectations
+- Setting up a FastAPI project
+- Creating a basic GET endpoint
+- Using path parameters and query parameters
+- Data validation with Pydantic models
+- Structuring response models
+- Handling POST requests
+- Uploading single and multiple files
+- Automated API testing using curl
+- Using GitHub Copilot for test case generation
+- Managing secret keys securely
+- Writing a Dockerfile for deployment
+- Deploying FastAPI applications to Hugging Face
+- Creating bash scripts for live endpoint testing
+
 
 
