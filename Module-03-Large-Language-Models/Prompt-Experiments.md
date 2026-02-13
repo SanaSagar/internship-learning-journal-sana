@@ -1,0 +1,21 @@
+## Week 3 – Day 1
+
+- Configured API keys securely for LLM access
+- Explored proxy-based API routing
+- Observed how token limits affect output quality
+- Studied self-attention and context handling
+- Generated embeddings and analyzed vector similarity
+- Understood vector database workflow (ChromaDB, LanceDB)
+- Analyzed RAG pipeline architecture
+- Compared standard RAG vs Hybrid RAG
+- Explored Base64 encoding use cases
+- Observed outputs from vision models
+- Reviewed video frame-based analysis
+- Practiced prompt engineering improvements
+- Designed structured schema-based outputs
+- Explored function calling workflow
+- Reviewed travel agent application example
+- Studied agent-tool coordination
+- Understood YAML-based LLM testing structure
+- Observed regression and assertion-based validation
+- Evaluated cost-performance trade-offs
