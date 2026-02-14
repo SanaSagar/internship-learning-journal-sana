@@ -70,3 +70,61 @@ Additionally, the session emphasized structured outputs using schemas, function 
 - Performance validation
 - Cost-effectiveness strategies
 - Commercial AI applications
+
+## Week 3 – Day 2
+
+### Session Summary
+
+This session focused on embeddings, vector databases, hybrid RAG architecture, and implementing Project 1 using similarity search. The discussion covered cost-effective embedding models, sentence transformers, OpenAI embeddings, cosine similarity, and vector mathematics concepts. 
+
+The session also explored multimodal embeddings, chunking strategies, environment variable management, asynchronous API calls using HTTPX, and building a question-answering system using embedding-based retrieval. The day concluded with implementing a top-5 similarity search pipeline using NumPy.
+
+---
+
+### Concepts Covered
+
+#### 🔹 Embeddings & Similarity
+- Text and image embeddings
+- Sentence Transformers
+- OpenAI embedding models
+- Cost-effective embedding strategies
+- Cosine similarity
+- Dot product
+- Vector norm
+- Similarity scoring
+
+#### 🔹 Multimodal Embeddings
+- Nomic AI embeddings
+- Text + Image similarity
+- API key configuration
+- JSON-based data exchange
+- Python input/output handling
+
+#### 🔹 Vector Databases & Storage
+- Storing embeddings in structured format
+- chunks.json structure:
+  - ID
+  - Source
+  - Text
+  - Embeddings
+- Efficient retrieval workflows
+- Hybrid RAG overview
+
+#### 🔹 Chunking Strategy
+- Why chunking is required
+- Token limits and context handling
+- Fixed-size vs semantic chunking
+- Preparing chunks for embedding
+
+#### 🔹 Environment & Configuration
+- Environment variables
+- .bashrc configuration
+- Secure API key storage
+- AI Pipe usage
+
+#### 🔹 Project 1 Implementation
+- Embedding-based retrieval system
+- Query embedding generation
+- Similarity comparison
+- Retrieving most relevant chunks
+- Cost-performance optimization
