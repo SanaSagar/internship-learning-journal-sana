@@ -117,3 +117,41 @@ Evaluate cost-effective embedding strategies.
 - Reduced unnecessary calls
 
 
+## Week 3 – Day 3
+
+- Diagnosed API key expiration errors
+- Compared AI Pipe and AI Proxy request behavior
+- Investigated Google Authentication key failures
+- Debugged FastAPI deployment errors on Vercel
+- Reviewed environment variable configurations
+- Tested Week 3 Question 3 submission workflow
+- Used Chrome DevTools for debugging
+- Analyzed prompt improvements for GA3 Question 11
+- Reviewed token usage differences in OpenAPI vs API Pipe
+- Explored scraping approach for Discourse API
+- Reviewed deployment checklist for Project 1
+- Practiced system commands for troubleshooting
+- Evaluated GitHub profile presentation
+
+
+## Week 3 – Day 4
+
+- Made OpenAI API calls using HTTPX
+- Sent POST requests with JSON body and headers
+- Tested endpoints using curl
+- Configured API keys using environment variables
+- Updated .bashrc for persistent key storage
+- Built chatbot with conversation history
+- Implemented system and user role handling
+- Generated embeddings for text inputs
+- Calculated cosine similarity using NumPy
+- Retrieved most similar vectors
+- Encoded images to base64 format
+- Sent image data to multimodal endpoint
+- Extracted product details from image
+- Implemented function calling schema
+- Defined tool structure and tool_choice
+- Extracted manufacturing & expiry date in structured JSON
+- Debugged API and schema errors
+
+
