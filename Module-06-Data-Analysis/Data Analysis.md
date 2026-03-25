@@ -1,528 +1,679 @@
-# Module 5 – Session 1  
-## Model the Data: Correlation & Regression in Excel
+# Data Cleaning in Excel 
+Excel is a handy tool for cleaning smaller datasets, especially when you want quick results without coding.
 
 ---
 
-## 1. Enable Data Analysis ToolPak
-1. Go to **File → Options**  
-2. Click **Add-ins**  
-3. At the bottom select **Manage: Excel Add-ins → Go**  
-4. Check **Analysis ToolPak** → Click **OK**
+## 1. Find & Replace
 
-Now you can access **Data → Data Analysis** in the ribbon.
+This feature helps you quickly edit or remove unwanted values.
 
----
-
-# Correlation Analysis
-
-## Step 1: Prepare Data
-Keep only these columns:
-- New Cases
-- New Deaths
-- New Vaccinations
-
-Remove unnecessary columns.
-
-## Step 2: Generate Correlation Matrix
-1. Go to **Data → Data Analysis**
-2. Select **Correlation → OK**
-3. **Input Range:** Select the three columns  
-4. Check **Labels in first row**
-5. Choose **Output Range** in the same sheet
-6. Click **OK**
-
-## Interpretation
-Correlation values range from **-1 to +1**.
-
-- **New Cases vs New Deaths = 0.84**  
-  → Very **strong positive correlation**
-
-- **New Vaccinations vs New Deaths = 0.23**  
-  → **Weak positive correlation**
+- Use `Ctrl + H` to open the dialog box  
+- Enter the text you want to find  
+- Leave the replace field empty if you want to remove it  
+- Click **Replace All** to apply changes across the sheet  
 
 ---
 
-# Scatterplot Visualization
+## 2. Formatting Data Types
 
-## Plot 1: New Cases vs New Deaths
-1. Select **New Cases (X-axis)** and **New Deaths (Y-axis)**
-2. Go to **Insert → Charts → Scatter Plot**
-3. Add **Trendline**
+Ensuring correct data types avoids calculation errors.
 
-**Insight:**  
-Trendline is steep → confirms **strong positive correlation (0.84)**.
+- Select the required column  
+- Go to the format dropdown in the toolbar  
+- Change from **General** to **Number** or any suitable format  
 
----
-
-## Plot 2: New Vaccinations vs New Deaths
-1. Select **New Vaccinations (X-axis)** and **New Deaths (Y-axis)**
-2. Insert **Scatter Plot**
-3. Add **Trendline**
-
-**Insight:**  
-Trendline slope is small → **weak correlation (0.23)**.  
-As vaccinations increased, deaths slightly decreased.
+This standardizes values and improves consistency.
 
 ---
 
-# Regression Analysis
+## 3. Removing Extra Spaces (TRIM)
 
-## Variables
-**Dependent Variable (Y):**
-- New Deaths
+Extra spaces can cause mismatches in data.
 
-**Independent Variables (X):**
-- New Cases
-- New Tests
-- New Vaccinations
-- Stringency Index
+- Create a new column  
+- Use formula: `=TRIM(A2)` (adjust cell reference)  
+- Drag the formula down  
+
+It removes leading, trailing, and extra internal spaces.
 
 ---
 
-## Step 1: Data Preparation
+## 4. Deleting Blank Rows
+
+To clean incomplete data:
+
+- Select a column  
+- Go to **Find & Select → Go To Special → Blanks**  
+- Right-click highlighted cells  
+- Choose **Delete → Entire Row**  
+
+---
+
+## 5. Eliminating Duplicates
+
+To keep only unique records:
+
+- Select your data column  
+- Go to **Data → Remove Duplicates**  
+
+Excel will filter out repeated entries automatically.
+
+---
+
+# Data Transformation in Excel
+
+Data transformation helps create meaningful insights from raw values.
+
+---
+
+## 1. Creating Calculated Fields
+
+You can generate new metrics using formulas.
+
+- Example: `=B2/C2`  
+- Apply to entire column using autofill  
+
+Useful for ratios like density, percentages, etc.
+
+---
+
+## 2. Using Pivot Tables
+
+Pivot Tables summarize large datasets easily.
+
+- Select dataset → **Insert → Pivot Table**  
+- Choose new worksheet  
+- Drag fields into **Rows, Columns, and Values**  
+
+---
+
+## 3. Counting Occurrences
+
+To check frequency:
+
+- Drag a field (e.g., Country) into **Rows**  
+- Drag same field into **Values**  
+
+It shows how many times each value appears.
+
+---
+
+## 4. Aggregating Data
+
+To summarize numbers:
+
+- Add categories (Country, City) in **Rows**  
+- Add numeric field (Population) in **Values**  
+- Change aggregation (**Sum, Average, Count**)  
+
+---
+
+## 5. Detecting Outliers with Charts
+
+Visual tools make patterns clearer.
+
+- Insert a chart from Pivot Table  
+- Filter specific categories  
+- Look for unusually high/low values  
+
+---
+
+# Text to Columns (Excel)
+
+This tool splits messy text into structured columns.
+
+---
+
+## Steps:
+
+- Select the column  
+- Go to **Data → Text to Columns**  
+- Choose **Delimited**  
+
+### Using Custom Delimiters
+
+- Select **Other**  
+- Enter symbols like `(` or `-`  
+- Split data step-by-step  
+
+### Using Standard Delimiters
+
+- Choose options like **Comma** or **Tab**  
+- Click **Finish** to separate values  
+
+---
+
+## Final Cleanup
+
+- Remove unwanted columns  
+- Add proper headers  
+- Format neatly  
+
+---
+
+# Data Aggregation in Excel
+
+Aggregation helps identify trends and patterns.
+
+---
+
+## 1. Prepare Data
+
+- Remove blank rows/columns  
+- Ensure clean dataset before analysis  
+
+---
+
+## 2. Extract Time Data
+
 Create new columns:
-- New Cases per 1000
-- New Tests per 1000
-- New Vaccinations per 1000
 
-Formula:
-Value ÷ 1000
-
+- Week → `=WEEKNUM(A2)`  
+- Month → `=TEXT(A2,"mmm")`  
+- Year → `=TEXT(A2,"yyyy")`  
 
 ---
 
-## Step 2: Run Regression
-1. Go to **Data → Data Analysis**
-2. Select **Regression**
-3. **Input Y Range:** New Deaths
-4. **Input X Range:**  
-   - New Cases per 1000  
-   - New Tests per 1000  
-   - New Vaccinations per 1000  
-   - Stringency Index
-5. Check **Labels**
-6. Select **New Worksheet Ply**
-7. Click **OK**
+## 3. Conditional Formatting
+
+Use color scales:
+
+- Highlight values  
+- Apply **Color Scale**  
+
+Helps identify high/low trends visually.
 
 ---
 
-# Interpreting Results
+## 4. Pivot-Based Aggregation
 
-## 1. Adjusted R²
-**Value: 0.816**
-
-Meaning:
-- **81.6% of variation in deaths** is explained by the model.
+- Rows → Category (e.g., Location)  
+- Columns → Time (Week/Month)  
+- Values → Numeric data  
 
 ---
 
-## 2. Significance F
-- Value **< 0.05**
+## 5. Sparklines
 
-Meaning:
-- The **overall regression model is statistically significant**.
+Mini charts inside cells:
 
----
+- Go to **Insert → Sparklines**  
+- Select data range  
 
-## 3. P-values (Variable Importance)
-
-| Variable | Result |
-|--------|--------|
-| New Cases | Significant |
-| New Tests | Significant |
-| New Vaccinations | Significant |
-| Stringency Index | Not significant (P = 0.11) |
-
-Only variables with **P < 0.05** should be trusted.
+Shows trend quickly.
 
 ---
 
-## 4. Coefficients (Impact on Deaths)
+## 6. Data Bars
 
-| Variable | Coefficient | Meaning |
-|--------|--------|--------|
-| New Cases /1000 | ~7 | 1000 cases → 7 more deaths |
-| New Tests /1000 | 0.69 | 1000 tests → 0.69 more deaths |
-| New Vaccinations /1000 | -0.07 | 1000 vaccinations → deaths decrease slightly |
-| Stringency Index | 2.71 | Appears to increase deaths, but **not statistically valid** |
+- Apply via **Conditional Formatting**  
+
+Helps compare values visually within cells.
 
 ---
+# Data Preparation Using Unix Shell Commands
 
-## Session 2
-Forecast Functions in Excel (Linear Regression & Time Series)
-Introduction
-In this tutorial, we explore the FORECAST function in Microsoft Excel.
+## Introduction
 
-The FORECAST function performs linear regression behind the scenes and uses it to predict future values.
+we explore how to perform **data preparation using Unix shell commands**.
 
-A synonym for this function is: FORECAST.LINEAR
+Unix tools are powerful because they are: - **Fast** -- written in C -
+**Agile** -- instant feedback while running commands -
+**Parallelizable** - **Available everywhere** -- Linux, Mac, and
+environments like Google Colab
 
-Both functions work exactly the same.
+Example command:
 
-Dataset Used
-We will use a Height and Weight dataset from Kaggle.
+``` bash
+!ls
+```
 
-The dataset contains information about 25,000 people, including:
+Lists files in the current directory.
 
-Height (in inches)
-Weight (in pounds)
-For demonstration purposes, we will only use 1,000 rows.
-
-Example data:
-
-Height (inches)	Weight (pounds)
-65	120
-68	140
-70	155
-Converting Units to Metric
-Since the dataset uses inches and pounds, we convert them to metric units.
-
-Convert Height (Inches → Centimeters)
-Formula:
-
-
-Height_cm = Height_inches * 2.54
-
-Example Excel formula:
-
-=A2 * 2.54
-Convert Weight (Pounds → Kilograms)
-Formula:
-
-Weight_kg = Weight_pounds / 2.20462
-Example Excel formula:
-
-=B2 / 2.20462
-After conversion, drag the formulas down to apply them to the entire dataset.
-
-Visualizing the Data
-To understand the relationship between height and weight, we create a scatter plot.
-
-Steps:
-
-Select the Height (cm) column.
-Select the Weight (kg) column.
-Insert → Chart → Scatter Plot
-Observation:
-
-Height ranges roughly 160 cm to 185 cm
-Weight ranges roughly 50 kg to 65 kg
-There is a positive linear relationship between height and weight.
-Using the FORECAST Function
-The syntax of the function is:
-
-=FORECAST(x, known_y's, known_x's)
-Where:
-
-x → Value we want to predict for
-known_y's → Dependent variable (target)
-known_x's → Independent variable
-Example: Predict Weight from Height
-Suppose we want to predict the weight of a person who is 170 cm tall.
-
-=FORECAST(170, WeightRange, HeightRange)
-Example result:
-
-170 cm → predicted weight ≈ 56 kg
-Reverse Prediction (Height from Weight)
-We can also reverse the variables.
+# Downloading Data Using curl
 
 Example:
 
-Predict height for a person weighing 75 kg.
+``` bash
+curl --location --continue-at - --output s.net-April-2024.gz <URL>
+```
 
-=FORECAST(75, HeightRange, WeightRange)
-Example result:
+### Important Options
 
-75 kg → predicted height ≈ 180 cm (≈ 6 feet)
-Forecasting Multiple Values
-Suppose we want predictions for several heights:
+  Option            Description
+  ----------------- ------------------------------
+  --location        Follow redirects
+  --continue-at -   Resume interrupted downloads
+  --output          Save the downloaded file
 
-Height
-150
-155
-160
-165
-170
-One way is to copy the formula:
+Check files:
 
-=FORECAST(A2, WeightRange, HeightRange)
-Then drag the formula down.
+``` bash
+ls
+```
 
-However, this approach is inefficient because each formula calculates regression independently.
+Detailed view:
 
-Using the TREND Function
-A better approach is using the TREND function.
+``` bash
+ls -l
+```
 
-Syntax:
+------------------------------------------------------------------------
 
-=TREND(known_y's, known_x's, new_x's)
-Example:
+# Decompressing Files
 
-=TREND(WeightRange, HeightRange, NewHeightRange)
-Benefits:
+``` bash
+gzip --decompress s.net-April-2024.gz
+```
 
-Computes regression once
-Applies predictions to the entire array
-Automatically fills the column
-TREND returns the same values as FORECAST.
+Compressed file (5.8 MB) may become much larger after decompression.
 
-Compatibility with Google Sheets
-These functions are also available in Google Sheets:
+------------------------------------------------------------------------
 
-FORECAST
-FORECAST.LINEAR
-TREND
-You can:
+# Viewing File Content
 
-Save the Excel file
-Open in Google Sheets
-Edit
-Save and reopen in Excel
-Everything works perfectly.
+## First Lines
 
-Limitation of Linear Regression
-Linear regression works well for simple linear relationships.
+``` bash
+head -n 5 s.net-April-2024
+```
 
-However, it performs poorly for cyclical or seasonal data.
+## Last Lines
 
-Example:
+``` bash
+tail -n 5 s.net-April-2024
+```
 
-Traffic data across time.
+Typical log fields include: - IP address - Date/time - Request type -
+HTTP response code - Response size - Referrer - User agent
 
-Dataset:
+------------------------------------------------------------------------
 
-DateTime	Number of Vehicles
-01-01 08:00	25
-01-01 09:00	40
-01-01 10:00	32
-When plotted, traffic data shows:
+# Counting Requests
 
-Daily peaks
-Weekly patterns
-Weekend drops
-Holiday effects
-This pattern is seasonal, not linear.
+``` bash
+wc -l s.net-April-2024
+```
 
-Linear Prediction on Traffic Data
-Using TREND:
+Counts number of requests (lines).
 
-=TREND(VehicleValues, DateTimeValues, FutureDateTimes)
-Result:
+------------------------------------------------------------------------
 
-Predicts around 20 vehicles
-Slight upward slope
-Fails to capture peaks and valleys
-This shows linear regression is not suitable for seasonal data.
+# Extracting IP Addresses
 
-Using FORECAST.ETS (Time Series Forecasting)
-For cyclical data, Excel provides:
-
-FORECAST.ETS
-This uses Exponential Triple Smoothing (ETS).
-
-Syntax:
-
-=FORECAST.ETS(target_date, values, timeline, [seasonality], [data_completion], [aggregation])
-Example Usage
-=FORECAST.ETS(A2, $B$2:$B$1000, $A$2:$A$1000)
-Where:
-
-A2 → Target date
-B2:B1000 → Vehicle counts
-A2:A1000 → Timeline
-Optional Parameters
-Seasonality
-Defines the repeating cycle.
-
-Example:
-
-24 → season repeats every 24 data points
-Example for hourly traffic data:
-
-24 = daily pattern
-If omitted, Excel automatically detects seasonality.
-
-Data Completion
-Handles missing values.
+``` bash
+!cut --delimeter " " --fields 1 s.net-April-2024 | head -n 5
+```
 
 Options:
 
-1 → Interpolation (default)
-0 → Missing values treated as zero
-Comparing Predictions
-When plotted together:
+  Option   Meaning
+  -------- --------------
+  --delimiter       delimiter
+  --fields      field number
 
-Line	Meaning
-Blue	Actual data
-Orange	Linear forecast
-Green	ETS forecast
-Observations:
+Preview:
 
-Linear prediction → almost flat line
-ETS prediction → follows seasonal patterns better
-Key Takeaways
-FORECAST / FORECAST.LINEAR
-Uses linear regression
-Works well for linear relationships
-Poor for seasonal data
-TREND
-Same as FORECAST
-More efficient for multiple predictions
-FORECAST.ETS
-Designed for time series forecasting
-Captures seasonality
-Better for cyclical data
-Outlier Detection in Excel
-Introduction
-In data analysis, it is important to identify outliers — values that are significantly higher or lower than the rest of the dataset.
+``` bash
+!cut --delimeter " " --fields 1 s.net-April-2024 | head -n 5
+```
 
-Outliers may occur because of:
+------------------------------------------------------------------------
 
-Data entry mistakes
-Measurement errors
-Rare but valid observations
-These values can distort statistical analysis such as mean, regression, or forecasting, so detecting them early is important. :contentReference[oaicite:1]{index=1}
+# Using Pipes
 
-What is an Outlier?
-An outlier is a data point that lies far away from the majority of data values.
 
-Example dataset:
+The `|` passes output from one command to the next.
 
-Values
-10
-12
-13
-14
-15
-200
-Here 200 is clearly far away from the rest of the values and is considered an outlier.
+------------------------------------------------------------------------
 
-Outliers can significantly impact the average and statistical interpretation of data. :contentReference[oaicite:2]{index=2}
+# Sorting Data
 
-Dataset Example in Excel
-Suppose we have a dataset like this:
+``` bash
+!cut --delimeter " " --fields 1 s.net-April-2024 | sort | -n 5
+```
 
-Student	Score
-A	52
-B	55
-C	60
-D	58
-E	95
-In this dataset, 95 may be an outlier depending on the statistical distribution.
+------------------------------------------------------------------------
 
-Method 1: Detect Outliers Using Sorting
-The simplest method:
+# Counting Unique Requests
 
-Steps
-Select the dataset
-Go to Data → Sort
-Sort values Ascending or Descending
-Look for unusually large or small numbers
-Example sorted dataset:
+``` bash
+!cut --delimeter " " --fields 1 s.net-April-2024 | sort | uniq --count | head -n 30
+```
+u can see the 30 IPs with number of duplications
 
-Score
-52
-55
-58
-60
-95
-The value 95 stands out as a potential outlier.
+------------------------------------------------------------------------
 
-Method 2: Detect Outliers Using Quartiles (IQR Method)
-A more statistical approach uses the Interquartile Range (IQR).
+# Finding Most Active IPs
 
-Step 1: Calculate Quartiles
-Use Excel's QUARTILE function.
+``` bash
+!cut --delimeter " " --fields 1 s.net-April-2024 | sort | uniq --count | sort --key -1n | tail
+```
 
-=QUARTILE(A2:A20,1)
-This calculates Q1 (First Quartile).
+Options:
 
-=QUARTILE(A2:A20,3)
-This calculates Q3 (Third Quartile).
+  Option   Meaning
+  -------- ------------------
+  -key      sort by column 1
+  -1n      sort alphabetically 
 
-Step 2: Calculate IQR
-=Q3 - Q1
+------------------------------------------------------------------------
+
+# Investigating Bots
+
 Example:
 
-IQR = Q3 - Q1
-Step 3: Calculate Outlier Limits
-Lower Limit:
+``` bash
+grep "^IP_ADDRESS" s.net-April-2024 | head
+```
 
-=Q1 - 1.5 * IQR
-Upper Limit:
+Bots may identify themselves in the user agent string.
 
-=Q3 + 1.5 * IQR
-Any values outside this range are considered outliers.
+Example:
 
-Statistically, values beyond 1.5 × IQR above Q3 or below Q1 are typically classified as outliers. ([Excel Maven][1])
+    Mozilla/5.0 compatible DataForSEO bot
 
-Example Calculation
-Dataset:
+------------------------------------------------------------------------
 
-Values
-10
-12
-14
-15
-18
-19
-200
-Suppose:
+# Searching With grep
 
-Q1 = 12
-Q3 = 18
-IQR = 6
-Lower Bound:
+``` bash
+grep "bot" s.net-April-2024
+```
 
-12 - (1.5 × 6) = 3
-Upper Bound:
+Better regex search:
 
-18 + (1.5 × 6) = 27
-Since 200 > 27, it is an outlier.
+``` bash
+grep -o "\S*bot\S*" s.net-April-2024
+```
 
-Method 3: Highlight Outliers with Conditional Formatting
-Excel can automatically highlight outliers.
+------------------------------------------------------------------------
 
-Steps
-Select the dataset
-Go to Home → Conditional Formatting
-Choose New Rule
-Use a formula
-Example formula:
+# Finding Most Active Bots
 
-=OR(A2<$LowerLimit, A2>$UpperLimit)
-Then apply a color such as red to highlight the outliers.
+``` bash
+grep -o "\S*bot\S*" s.net-April-2024 | sort | uniq -c | sort -k1 -n | tail
+```
 
-Visualizing Outliers Using Charts
-Outliers become easier to see in charts.
+Example bots discovered: - GoogleBot - AppleBot - BingBot - DataForSEO
+Bot - PetalBot
 
-Use:
-Scatter plots
-Box plots
-Box plots are especially useful because they show:
+------------------------------------------------------------------------
 
-Median
-Quartiles
-Outliers visually
-Why Outlier Detection Matters
-Outliers can distort:
+# Converting Log to CSV
 
-Mean
-Regression models
-Machine learning models
-Forecasting accuracy
-Therefore, identifying them is a critical step in data cleaning and preprocessing.
+Example log date:
 
-When to Remove Outliers
-Do not always remove outliers automatically.
+    [10/Apr/2024:10:22:15 +0000]
 
-You should check whether they are:
+Convert brackets to quotes:
 
-Data entry errors
-Sensor measurement errors
-Legitimate rare events
-Sometimes outliers contain valuable information.
+``` bash
+sed 's/\[\([^]]*\)\]/"\1"/g' s.net-April-2024 > log.csv
+```
+
+------------------------------------------------------------------------
+
+# Preview Converted File
+
+``` bash
+head log.csv
+```
+
+------------------------------------------------------------------------
+
+# Create Smaller Sample
+
+``` bash
+head -n 1000 log.csv > small.csv
+```
+
+------------------------------------------------------------------------
+
+# Opening in Excel
+
+Steps:
+
+1.  Download file
+2.  Rename `.csv` → `.txt`
+3.  Open in Excel
+4.  Select **Delimited**
+5.  Choose **Space delimiter**
+
+------------------------------------------------------------------------
+
+# Handling Data Issues
+
+Sometimes URLs contain quotes like:
+
+    "devotional songs"
+
+This can break CSV structure.
+
+Solutions: - Clean rows manually - Preprocess quotes
+
+------------------------------------------------------------------------
+
+# Useful Commands
+
+  Command   Purpose
+  --------- ------------------
+  ls        list files
+  curl      download data
+  gzip      decompress
+  head      view first lines
+  tail      view last lines
+  wc        count lines
+  cut       extract columns
+  sort      sort values
+  uniq      count duplicates
+  grep      search text
+  sed       modify text
+
+
+# Data Preparation in DuckDB
+
+DuckDB's SQL engine is highly efficient for data preparation and can handle large files quickly. Below is a comprehensive guide to data preparation techniques using the DuckDB CLI, mimicking real-world business data patterns. 
+
+## 1. Creating Sample Data
+Before working with messy production data, it is best to set up a controlled environment. You can generate a sample dataset to simulate common e-commerce scenarios like missing customer info, seasonal patterns, and geographic segmentation. 
+
+```sql
+duckdb sample.duckdb <<'SQL'
+CREATE OR REPLACE TABLE orders AS
+SELECT
+  seq AS order_id,
+  CASE WHEN seq % 5 = 0 THEN NULL ELSE 'Customer ' || seq END AS customer,
+  date '2025-01-01' + CAST(seq % 15 AS INTEGER) AS order_date,
+  CASE WHEN seq % 3 = 0 THEN 'Widget ' || seq ELSE 'Gadget ' || seq END AS product,
+  round(random()*1000, 2) AS amount,
+  CASE WHEN seq % 4 = 0 THEN 'EU' ELSE 'US' END AS region
+FROM range(1, 50) tbl(seq);
+SQL
+```
+
+To practice handling corrupted CSV files (like unescaped quotes or missing delimiters), you can simulate a messy file.
+
+```bash
+cat <<'EOF' > messy_orders.csv
+order_id,customer,order_date,product,amount,region
+1,Customer 1,2025-01-01,Widget 1,100,US
+2,Customer 2,2025-01-02,Gadget 2,200,US
+3,Customer 3,2025-01-03,Gadget 3,300,EU
+EOF
+```
+
+You can also create a large dataset to practice memory-efficient chunk processing for files too large to fit in RAM.
+
+```sql
+duckdb sample.duckdb <<'SQL'
+COPY (SELECT seq AS id, random() AS val FROM range(100000)) TO 'big.csv';
+SQL
+```
+
+## 2. Exploratory Data Analysis (EDA)
+Quick exploratory analysis helps you understand the data structure and quality, preventing costly mistakes caused by missing values or incorrect data types.
+
+```sql
+-- Preview and get stats
+SELECT * FROM orders LIMIT 5;
+DESCRIBE orders;
+SELECT COUNT(*) AS n, AVG(amount) AS avg_amount FROM orders;
+```
+
+## 3. Data Ingestion and Format Conversion
+Converting data formats ensures your cleaned data can reach every stakeholder in their preferred format, whether it's Parquet for analytics, JSON for APIs, or CSV for Excel.
+
+```sql
+COPY (SELECT * FROM orders) TO 'orders.json' (FORMAT JSON);
+COPY (SELECT * FROM orders) TO 'orders.parquet' (FORMAT PARQUET);
+```
+
+When dealing with real-world, malformed CSV files, you can instruct DuckDB to ignore errors so your pipeline doesn't break.
+
+```sql
+-- Skip bad lines while loading
+SELECT * FROM read_csv_auto('messy_orders.csv', ignore_errors = true);
+```
+
+You can also seamlessly combine data from various formats (CSV, JSON, Parquet) without maintaining separate processing pipelines.
+
+```sql
+CREATE TABLE json_orders AS SELECT * FROM read_json_auto('orders.json');
+CREATE TABLE parquet_orders AS SELECT * FROM read_parquet('orders.parquet');
+
+SELECT * FROM orders
+UNION ALL
+SELECT * FROM parquet_orders;
+```
+
+## 4. Data Cleaning
+### Handling Missing Values
+Rather than excluding incomplete records entirely, strategic imputation preserves data for analysis.
+
+```sql
+-- Replace null customer names
+SELECT COALESCE(customer, 'Unknown') AS customer FROM orders;
+```
+
+### String and Regex Operations
+Standardizing text ensures accurate grouping and search functionality. You can use simple string operations or regular expressions for more complex patterns like fixing inconsistent spacing.
+
+```sql
+-- Basic string trimming and lowering
+SELECT DISTINCT TRIM(LOWER(product)) AS clean_product FROM orders;
+
+-- Regex search and replace for multiple spaces
+SELECT REGEXP_REPLACE(product, '\\s+', ' ', 'g') AS tidy_product FROM orders;
+```
+
+### Date Parsing
+Converting raw dates into standard formats is critical for time-based business analysis, forecasting, and filtering.
+
+```sql
+SELECT order_id, STRFTIME(order_date, '%Y-%m') AS order_month FROM orders;
+```
+
+## 5. Data Transformation and Subsetting
+### Conditional Logic (Binning)
+Categorizing continuous data (like exact dollar amounts) into distinct segments helps drive targeted decision-making and performance analysis.
+
+```sql
+SELECT 
+  order_id,
+  CASE
+    WHEN amount > 700 THEN 'high'
+    WHEN amount > 300 THEN 'medium'
+    ELSE 'low'
+  END AS price_band
+FROM orders;
+```
+
+### Derived Columns
+You can easily create new business metrics (like tax calculations or formatting codes) directly from existing data.
+
+```sql
+SELECT *, amount * 0.1 AS tax, UPPER(region) AS region_code FROM orders;
+```
+
+### Filtering and Dropping Columns
+Efficient filtering limits analysis to relevant subsets and allows you to exclude sensitive information (like PII).
+
+```sql
+SELECT order_id, amount FROM orders WHERE region = 'US';
+SELECT * EXCLUDE region FROM orders;
+```
+
+## 6. Advanced Processing
+### Processing in Chunks
+For massive datasets that exceed memory limits, you can process data in manageable chunks.
+
+```sql
+SELECT * FROM read_csv_auto('big.csv') LIMIT 1000 OFFSET 0;
+SELECT * FROM read_csv_auto('big.csv') LIMIT 1000 OFFSET 1000;
+```
+
+### Summaries and Pivots
+Aggregating and pivoting detailed transaction data into high-level insights is foundational for strategic planning and executive dashboards.
+
+```sql
+-- Aggregation
+SELECT region, COUNT(*) AS n_orders, SUM(amount) AS total 
+FROM orders 
+GROUP BY region;
+
+-- Pivot by region
+SELECT * FROM orders 
+PIVOT(COUNT(*) FOR region IN ('US', 'EU'));
+```
 
 ---
+---
 
+# Setting Up Your First dbt Project
+
+**dbt (data build tool)** is an open-source project that handles the transformation piece of the ELT (Extract, Load, Transform) process by blending software engineering automation with SQL. 
+
+Below are the steps to install dbt, initialize a project, configure your Snowflake connection, and push your work to GitHub.
+
+## 1. Installation
+Before installing, ensure you have **Python** and **Git** installed on your machine. You can install dbt globally using the command line via Python's package manager, pip. Once the installation finishes downloading its dependencies, verify it by checking the version.
+
+```bash
+pip install dbt
+dbt --version
+```
+
+## 2. Project Initialization
+There are two ways to start: you can either create a GitHub repository first and clone it, or create your files and push them to a repository later. Assuming you cloned an empty repository, navigate into it and initialize your skeleton dbt project. 
+
+```bash
+git clone <your_repository_url>
+cd <your_repository_folder>
+dbt init demo_dbt
+```
+This command generates a skeleton project containing core folders like `models`, `macros`, `snapshots`, and `tests`. 
+
+## 3. Profile Configuration (Snowflake)
+Initializing the project also creates a `.dbt` folder in your machine's user directory containing a `profiles.yml` file. This file splits up credentials based on environments (like `dev` and `prod`). 
+
+## 4. Testing and Running Models
+Before running your models, you should verify that your profiles and project files are correctly linked to your database. Once the debug command returns `connection is okay`, you can run your initial skeleton models.
+
+```bash
+# Test the connection to Snowflake
+dbt debug
+
+# Run your dbt models
+dbt run
+```
+
+## 5. Version Control with Git
+After your project is initialized and running successfully, it is time to push the project to your Git repository. If you have extra folder layers you don't want, simply move your files to the root directory before running the standard Git commands.
+
+```bash
+git add .
+git commit -m "my first commit"
+git push
+```
+Once pushed, your team can begin creating branches to collaborate on building out your data warehouse.
